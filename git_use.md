@@ -370,6 +370,8 @@ git push -u origin 分支名
 git push
 ```
 
+> **`-u` 参数说明：** `-u` 是 `--set-upstream` 的简写，作用是将本地分支与远程分支建立跟踪关系。只需要在新分支**首次推送时使用一次**，之后 Git 会记住对应关系，后续 `git push` 和 `git pull` 就不需要再指定 `origin 分支名` 了。可以用 `git branch -vv` 查看当前的跟踪关系。
+
 **拉取代码：**
 
 ```bash
