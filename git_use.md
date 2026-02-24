@@ -114,6 +114,36 @@ git config --global core.autocrlf true
 git config --global core.autocrlf input
 ```
 
+### 代理配置
+
+当网络环境需要通过代理访问远程仓库时，可以为 Git 配置全局代理。
+
+```bash
+# 设置全局 HTTP/HTTPS 代理
+git config --global http.proxy http://127.0.0.1:7890
+git config --global https.proxy http://127.0.0.1:7890
+
+# 取消代理
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+将 `127.0.0.1:7890` 替换为你实际的代理地址和端口。
+
+### SSL 证书校验
+
+使用代理或在某些内网环境下，可能遇到 SSL 证书校验失败的问题，可以通过以下方式处理：
+
+```bash
+# 关闭 HTTPS 证书校验（解决 SSL certificate problem 报错）
+git config --global http.sslVerify false
+
+# 重新开启证书校验
+git config --global http.sslVerify true
+```
+
+> **注意：** 关闭证书校验会降低安全性，建议仅在信任的网络环境中使用，问题解决后及时重新开启。
+
 ---
 
 ## 4. GitHub 介绍与基本操作
